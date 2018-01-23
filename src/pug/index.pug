@@ -1,0 +1,127 @@
+doctype html
+html(lang='ru-RU')
+	head
+		meta(charset='utf-8')
+		title Верстка Айтекс
+		link(rel="stylesheet" type="text/css" href="css/main.css")
+		link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet")
+		script(src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js")
+		script(src="http://code.jquery.com/jquery-3.3.1.min.js")
+		script(src="https://use.fontawesome.com/392b486afe.js")
+		script(src="../js/main.js")
+	body
+		include modules/header-nav-module.pug
+		main
+			.wrapper
+				.slider-box
+					.slider
+						img(src="img/slider-1.png" alt="Трактор")
+						img(src="img/slider-2.png" alt="Еще трактор")
+						img(src="img/slider-3.png" alt="Снова трактор")
+					.prev
+					.next
+					ul.bullets
+						.slider-information
+							p
+								!= 'профессиональная техника <br> в аренду от'
+								span.price 15000
+								span.days руб./сутки
+			.calculation
+				.wrapper
+					.calculation-wrapper
+						.calculation-top
+							a(href="#") 
+								!= '<span>Главная</span>/<span>Каталог</span>/Название товара' 
+						.calculation-img.column
+							img(src="img/caterpillarImage.png" alt="Трактор")
+						.calculation-char.column
+							p.name JCB 4CX Super
+							.accordion
+								h2.acc-head
+									a Характеристики
+								.acc-body
+									.accordion-wrapper
+										.checkbox
+											input#check1(type="checkbox" data-price="100.000")
+											label(for="check1") Характеристика 1
+										.checkbox
+											input#check2(type="checkbox" data-price="200.000")
+											label(for="check2") Характеристика 2
+										.checkbox
+											input#check3(type="checkbox" data-price="300.000")
+											label(for="check3") Характеристика 3
+								h2.acc-head
+									a Информация
+								.accordion-inf.acc-body
+									textarea
+							p.price.column 0.000 Р.
+							a(href="").btn-order.column заказать
+			.line-service
+				.wrapper
+					.line-service-wrapper
+						h2.service-name услуги
+			.services
+				.wrapper
+					.services-wrapper
+						.service.column
+							.picture.column
+								a(href="#")
+									img(src="../img/favorImage.png" alt="Засыпка траншей")
+							.description.column
+								h2 засыпка траншей
+								p Нашей сомпанией осуществляется засыпка траншей в Екатеринбурге, востребованная предприятиями и частными лицами.
+						.service.column
+							.picture.column
+								a(href="#")
+									img(src="../img/favorImage.png" alt="Вывоз мусора")
+							.description.column
+								h2 вывоз мусора
+								p Вывоз мусора - составляющая деятельности производста и бытовых предприятий.
+						.service.column
+							.picture.column
+								a(href="#")
+									img(src="../img/favorImage.png" alt="Доставка")
+							.description.column
+								h2 доставка
+								p Отсев образуется после разработки твердых горный пород и я вляется востребованным материалом в строительстве.
+						.service.column
+							.picture.column
+								a(href="#")
+									img(src="../img/favorImage.png" alt="Подъем грузов")
+							.description.column
+								h2 подъем грузов
+								p Выполнение широкого спектра высотных операций сложно представить без специализированной техники.
+			.to-do
+				.wrapper
+					.tasks
+						h2 заголовок
+						ol.task-list
+							li Задача 1
+								i.fa.fa-pencil(aria-hidden="true")
+								i.fa.fa-times(aria-hidden="true")
+							li Задача 2
+								i.fa.fa-pencil(aria-hidden="true")
+								i.fa.fa-times(aria-hidden="true")
+							li Задача 3
+								i.fa.fa-pencil(aria-hidden="true")
+								i.fa.fa-times(aria-hidden="true")
+						.task-text
+							input.input-task(type="text" placeholder="Введите задачу")
+							i.fa.fa-check(aria-hidden="true")
+							i.fa.fa-times(aria-hidden="true")
+			.map
+				script(type="text/javascript" charset="utf-8" async src="https://api-			maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae94a0347b19047b839fd1ad2c2b8c62c7629fb43c103c292e0634493bebbfb15&amp;width=100%25&amp;height=430&amp;lang=ru_RU&amp;scroll=true")
+
+		include modules/footer-module.pug			
+
+
+
+
+
+
+
+
+
+
+
+
