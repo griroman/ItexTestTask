@@ -2,6 +2,8 @@ var gulp = require('gulp');
 	sass = require('gulp-sass');
 	pug = require('gulp-pug');
 	browserSync = require('browser-sync');
+	del = require('del');
+	build = require('gulp-build');
 
 gulp.task('browser-sync', function() {
 	browserSync.init({
@@ -26,7 +28,6 @@ gulp.task('watch', ['browser-sync'], function(){
 
 gulp.task('default', ['pug', 'watch']);
 
-
 gulp.task('sass', function() {
 	return gulp.src('src/scss/main.scss')
 	.pipe(sass())
@@ -34,4 +35,23 @@ gulp.task('sass', function() {
 	.pipe(browserSync.reload({
 	stream: true
 }));
+});
+
+gulp.task('clean', function() {
+	return del.sync('dist');
+});
+
+gulp.task('build', ['clean'], function() {
+	gulp.src('src/css/main.css')
+		.pipe(gulp.dest('dist/css'));
+
+	gulp.src('src/img/*')
+		.pipe(gulp.dest('dist/img'));
+
+
+	gulp.src('src/js/main.js')
+		.pipe(gulp.dest('dist/js'));
+
+	gulp.src('src/index.html')
+		.pipe(gulp.dest('dist'));
 });
